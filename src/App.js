@@ -1,14 +1,21 @@
 import React from "react";
-import { ReactComponent as User } from "./user.svg";
+import { PDFExport } from '@progress/kendo-react-pdf';
 import { ReactComponent as BriefCase } from "./briefcase.svg";
 import { ReactComponent as Medal } from "./medal.svg";
 import "./App.css";
 
 function App() {
+  let pdfExportComponent = null;
+
+  function handleDownloadPdf() {
+    pdfExportComponent.save();
+  }
+
   return (
-    <div className="container">
+    <PDFExport ref={(component) => pdfExportComponent = component} paperSize="A4">
+    <div className="container" id="nodeToRenderAsPDF">
       <header className="header">
-        <div className="name">
+        <div className="name" onClick={handleDownloadPdf}>
           <h1>MICHAEL GICHIA</h1>
         </div>
         <div className="sub-name">
@@ -19,31 +26,11 @@ function App() {
         </div>
       </header>
       <main className="main">
-        <aside className="aside">
-          <div>Hello world</div>
-        </aside>
         <section className="resume-body">
           <div className="resume-section">
             <div className="resume-item-title">
-              <User height="14px" width="14px" />
-              <h3>PROFILE</h3>
-            </div>
-            <div className="resume-item-description">
-              <p>
-                Passionate, responsible and committed frontend so ware engineer,
-                with a get - it - done, on - time spirit, and more than three
-                years of experience designing, implementing and adapting
-                technically modern online web applications using JavaScript,
-                React, Nodejs, CSS, modular architecture and more. Proficient in
-                front-end technologies, language standards and application
-                life-cycle management.
-              </p>
-            </div>
-          </div>
-          <div className="resume-section">
-            <div className="resume-item-title">
               <BriefCase height="14px" width="14px" />
-              <h3>EMPLOYMENT HISTORY</h3>
+              <h2>EMPLOYMENT HISTORY</h2>
             </div>
             <div className="resume-item-sub-title">
               <h4>Frontend Engineer Lead at Mookh Africa, Nairobi, Kenya</h4>
@@ -58,7 +45,7 @@ function App() {
                 functional solutions. Created development plans, project
                 timelines, and test cases.
               </p>
-              <h5>Key Achievements:</h5>
+              <h4>Key achievements:</h4>
               <ul className="resume-item-actionable">
                 <li>
                   <p>
@@ -107,7 +94,7 @@ function App() {
                 functional solutions. Created development plans, project
                 timelines, and test cases.
               </p>
-              <h5>Key Achievements:</h5>
+              <h4>Key achievements:</h4>
               <ul className="resume-item-actionable">
                 <li>
                   <p>
@@ -151,7 +138,7 @@ function App() {
                 help to monitor performance and focus on what matters the most.
                 I attained 5 out the 5-star rating on this projects.
               </p>
-              <h5>Key Achievements:</h5>
+              <h4>Key achievements:</h4>
               <ul className="resume-item-actionable">
                 <li>
                   <p>
@@ -194,7 +181,7 @@ function App() {
                 Deals expert is an aﬀiliate marketing website for advertising
                 latest and trending products, services across the globe.
               </p>
-              <h5>Key Achievements:</h5>
+              <h4>Key achievements:</h4>
               <ul className="resume-item-actionable">
                 <li>
                   <p>
@@ -233,7 +220,7 @@ function App() {
                 Deals expert is an aﬀiliate marketing website for advertising
                 latest and trending products, services across the globe.
               </p>
-              <h5>Key Achievements:</h5>
+              <h4>Key achievements:</h4>
               <ul className="resume-item-actionable">
                 <li>
                   <p>
@@ -275,7 +262,7 @@ function App() {
                 front-end, basically building the game logic in JavaScript,
                 building UIs and consuming data from APIs for users statistics.
               </p>
-              <h5>Key Achievements:</h5>
+              <h4>Key achievements:</h4>
               <ul className="resume-item-actionable">
                 <li>
                   <p>
@@ -289,7 +276,7 @@ function App() {
           <div className="resume-section">
             <div className="resume-item-title">
               <Medal height="14px" width="14px" />
-              <h3>EDUCATION</h3>
+              <h2>EDUCATION</h2>
             </div>
             <div className="resume-item-sub-title">
               <h4>The Nairobi Dev School, Nairobi, Kenya</h4>
@@ -305,8 +292,10 @@ function App() {
           </div>
         </section>
       </main>
-    </div>
+      </div>
+      </PDFExport>
   );
 }
 
 export default App;
+

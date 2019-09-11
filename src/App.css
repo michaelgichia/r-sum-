@@ -1,15 +1,13 @@
 .container {
   position: relative;
   display: block;
-  width: 900px;
+  width: 100%;
   min-height: 100vh;
   background-color: #fff;
-  border: 1px solid black;
 }
 
 .header {
-  margin-bottom: 28px;
-  padding: 28px;
+  padding: 14px;
   width: 100%;
 }
 
@@ -28,55 +26,61 @@
   text-align: center;
   color: #5c5a62;
   font-weight: 500;
+  font-size: 14px;
 }
 
 .main {
   display: flex;
 }
 
-.aside {
+/* .aside {
   display: flex;
-  width: 240px;
+  width: 150px;
   height: 100%;
-}
+} */
 
 .resume-body {
-  width: calc(100% - 240px);
+  width: 100%;
   height: 100%;
 }
 
 .resume-item-title {
   display: flex;
   align-items: center;
-  margin-bottom: 7px;
+  margin-bottom: 14px;
 }
 
 .resume-item-description {
   padding: 0px 14px 7px 28px;
 }
 
-.resume-item-description h5 {
-  color: #5c5a62;
-  letter-spacing: 1px;
+.resume-item-description h4 {
   margin-bottom: 7px;
-  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: #5c5a62;
 }
 
 .resume-item-sub-title {
-  padding: 7px 28px 0px 28px;
+  padding: 0px 28px;
+}
+
+.resume-item-sub-title h4 {
+  word-spacing: 2px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .resume-item-sub-title h4:first-child {
-  letter-spacing: 1px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  font-family: 'Oswald', sans-serif, source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.resume-item-sub-title h4:last-child {
   color: #5c5a62;
 }
 
-.resume-item-sub-title h4:last-child {
-  margin-bottom: 14px;
-}
-
-.resume-item-title h3 {
-  margin-left: 14px;
+.resume-item-title h2 {
+  margin-left: 7px;
+  letter-spacing: 0.5px;
 }
 
 .resume-section {
@@ -84,16 +88,12 @@
 }
 
 .resume-section h3 {
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
 
 .resume-section p {
-  color: #5c5a62;
+  color: #757575;
   margin-bottom: 7px;
-}
-
-.resume-brief {
-  margin-bottom: 14px !important;
 }
 
 .resume-item-actionable {
